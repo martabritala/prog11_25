@@ -3,5 +3,11 @@
 {% block tabs%} Sveiki {% endblock%}
 
 {% block saturs %}
-<h1>Sveiki!</h1>
+
+    {% for viens in name %}
+
+        <h1>Sveiki, {{viens}} {{last}}!</h1>
+
+    {% endfor %}
+
 {% endblock%}
