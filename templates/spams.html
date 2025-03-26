@@ -4,11 +4,11 @@
 
 {% block saturs %}
 
-<form>
+<form method="post" action="/veidot_spamu">
     <label class="form-label"> Vārds </label>
-    <input type="text" placeholder="Vārds">
+    <input type="text" name="vards" placeholder="Vārds">
     <label class="form-label"> Vecums </label>
-    <input type="number">
+    <input type="number" name = "vecums">
     <label class="form-label"> Dzimums </label>
     <input type="radio" name = "dzimums" value = "v">
     <label for="v">Vīrietis</label>

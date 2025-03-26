@@ -39,4 +39,9 @@ def viss_spams():
             info = viens.split()
             print (info[0]) #Uzdevums - šo rindiņu nomainīt tā, lai izveidojas spama vēstule!
 
-viss_spams()
+# viss_spams()
+
+def pievienot_datus(vards, vecums, dzimums):
+    with open("vardi.txt", "a", encoding="utf-8") as f:
+        f.write(f"\n{vards} {vecums} {dzimums}")
+    return
