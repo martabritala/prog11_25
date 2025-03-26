@@ -1,0 +1,21 @@
+{% extends 'test.html'%}
+
+{% block tabs %} Spams {% endblock %}
+
+{% block saturs %}
+
+<form>
+    <label class="form-label"> Vārds </label>
+    <input type="text" placeholder="Vārds">
+    <label class="form-label"> Vecums </label>
+    <input type="number">
+    <label class="form-label"> Dzimums </label>
+    <input type="radio" name = "dzimums" value = "v">
+    <label for="v">Vīrietis</label>
+    <input type="radio" name = "dzimums" value = "s">
+    <label for="s">Sieviete</label>
+    <input type="submit" value="Izveidot spamu!">
+</form>
+
+
+{% endblock %}

@@ -17,6 +17,10 @@ def sveiki_cits(vards1, uzvards1):
     uzvards = uzvards1
     return render_template("sveiki.html", name=vards, last=uzvards)
 
+@app.route("/spams")
+def spams():
+    return render_template("spams.html")
+
 
 if __name__ == '__main__':
     app.run(port=5000)
