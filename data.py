@@ -1,3 +1,5 @@
+from random import choice
+
 def ierakstit(teksts):  #Funkcija, lai failā ierakstītu tekstu
     fails = open("teksts.txt", "w", encoding='utf-8')
     fails.write(teksts)
@@ -45,3 +47,18 @@ def pievienot_datus(vards, vecums, dzimums):
     with open("vardi.txt", "a", encoding="utf-8") as f:
         f.write(f"\n{vards} {vecums} {dzimums}")
     return
+
+def iegut_datus():
+    with open("vardi.txt", "r", encoding="utf-8") as f:
+        rindinas = f.readlines()
+        visi_dati = []
+        for rinda in rindinas:
+            rindas_dati = rinda.split()
+            visi_dati.append(rindas_dati)
+    return visi_dati
+
+def iegut_vardu():
+    with open("karatavu_vardi.txt", "r", encoding="utf-8") as f:
+        vardi = f.readlines()
+    return choice(vardi)
+        

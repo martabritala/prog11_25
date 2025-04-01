@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request
-from data import uztaisit_vienu_spamu, pievienot_datus
+from data import uztaisit_vienu_spamu, pievienot_datus, iegut_datus, iegut_vardu
 
 app = Flask(__name__)
 
@@ -20,7 +20,9 @@ def sveiki_cits(vards1, uzvards1):
 
 @app.route("/spams")
 def spams():
-    return render_template("spams.html")
+    dati = iegut_datus()
+    # print(dati)
+    return render_template("spams.html", dati = dati)
 
 @app.route("/veidot_spamu", methods=["POST"])
 def veidot():
@@ -30,6 +32,13 @@ def veidot():
     # uztaisit_vienu_spamu(name, age, sex)
     pievienot_datus(name, age, sex)
     return redirect("/spams")
+
+@app.route("/karatavas")
+def karatavas():
+    vards = iegut_vardu()
+    return render_template("karatavas.html", vards=vards)
+
+
 
 
 if __name__ == '__main__':

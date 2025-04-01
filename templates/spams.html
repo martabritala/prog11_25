@@ -17,5 +17,15 @@
     <input type="submit" value="Izveidot spamu!">
 </form>
 
+<hr>
+
+{% for rinda in dati %}
+<h3> Sveiki, {{rinda[0]}}!</h3>
+<p> Tu esi laimēj{% if rinda[2]=="v" %}is {% else %}usi {% endif %}
+    {{rinda[1]}}0 EUR!
+
+</p>
+<hr>
+{% endfor %}
 
 {% endblock %}
