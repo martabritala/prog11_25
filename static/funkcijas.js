@@ -14,10 +14,11 @@ let minamaisVards = ""
 let atminetais = ""
 
 function uzzimetVardu(){
-    minamaisVards = document.getElementById("vards").textContent
+    minamaisVards = document.getElementById("vards").textContent.trim()
     console.log(minamaisVards)
     for(burts of minamaisVards){
         atminetais +="_ "
     }
     console.log(atminetais)
+    document.getElementById("vardaVieta").innerHTML = atminetais
 }
