@@ -11,14 +11,34 @@ Katru reizi, kad cilvēks piespiež pogu:
 8. Jāpārbauda, vai spēlētājs nav zaudējis.
 */
 let minamaisVards = ""
-let atminetais = ""
+let atminetais = []
+let dzivibas = 5
 
 function uzzimetVardu(){
-    minamaisVards = document.getElementById("vards").textContent.trim()
+    minamaisVards = document.getElementById("vards").textContent.trim().toUpperCase()
     console.log(minamaisVards)
     for(burts of minamaisVards){
-        atminetais +="_ "
+        atminetais.push("_") 
     }
     console.log(atminetais)
-    document.getElementById("vardaVieta").innerHTML = atminetais
+    document.getElementById("vardaVieta").innerHTML = atminetais.join(" ")
+    document.getElementById("dzivibas").innerHTML = dzivibas
+}
+
+function minetBurtu(burts){
+    document.getElementById(burts).disabled=true
+    let atrada = -1
+//Meklēšana, ja atrodas burts, tad atrada=0
+    burts = burts.toUpperCase()
+    for(indekss in minamaisVards){
+        console.log(indekss)
+        if(minamaisVards[indekss] == burts){
+            atrada = 0
+            atminetais[indekss] = burts
+            console.log(burts, atminetais[indekss])
+        }
+    }
+    dzivibas += atrada
+    document.getElementById("vardaVieta").innerHTML = atminetais.join(" ")
+    document.getElementById("dzivibas").innerHTML = dzivibas
 }
