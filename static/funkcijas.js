@@ -41,4 +41,25 @@ function minetBurtu(burts){
     dzivibas += atrada
     document.getElementById("vardaVieta").innerHTML = atminetais.join(" ")
     document.getElementById("dzivibas").innerHTML = dzivibas
+    parbauditBeigas()
+}
+
+function parbauditBeigas(){
+    if(dzivibas==0){ //Zaudēja
+        document.getElementById("rezultats").innerHTML = "Tu zaudēji!"
+        let pogas = document.getElementsByClassName("burts")
+        for (poga of pogas){
+            poga.disabled=true
+        }
+        return
+    }
+    if (!atminetais.includes("_")){
+        document.getElementById("rezultats").innerHTML = "Tu uzvarēji!"
+        document.getElementById("rezultats").classList.remove("text-danger")
+        document.getElementById("rezultats").classList.add("text-success")
+        let pogas = document.getElementsByClassName("burts")
+        for (poga of pogas){
+            poga.disabled=true
+        }
+    }
 }
